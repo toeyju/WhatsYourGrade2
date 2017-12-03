@@ -13,12 +13,12 @@ TextView grade;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
-        name = (EditText) findViewById(R.id.n_text);
-        grade = (EditText) findViewById(R.id.s_text);
+        name = (TextView) findViewById(R.id.n_text);
+        grade = (TextView) findViewById(R.id.s_text);
 
         Intent Page = getIntent();
         String name1 = Page.getStringExtra("Name");
-        String grade1 = Page.getStringExtra("BMItext");
+        String grade1 = Page.getStringExtra("GradeText");
 
         name.setText(name1);
         grade.setText(grade1);

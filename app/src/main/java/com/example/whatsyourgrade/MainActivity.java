@@ -25,38 +25,38 @@ Button find,exit;
         find.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                double score1 = Double.valueOf(score.getText().toString());
+                String score1 = String.valueOf(score.getText().toString());
                 String name1 = String.valueOf(name.getText().toString());
 
-                /*if(name1.equals(" ")){
-                    name.setError("ป้อนชื่อ");
+                if (name1.equals("")) {
+                        name.setError("ป้อนชื่อ");
+                } else if (score1.equals("")){
+                        score.setError("ป้อนคะแนน");
+
                 }else{
 
+                    String Grade = " ";
+                    int score2 = Integer.valueOf(score.getText().toString());
+                    if (score2 < 50) {
+                        Grade = "F";
+                    } else if (score2 <60) {
+                        Grade = "D";
+                    } else if (score2 <70) {
+                        Grade = "C";
+                    } else if (score2 <80) {
+                        Grade = "B";
+                    } else{
+                        Grade = "A";
+                    }
+                    Intent New = new Intent(MainActivity.this, Main2Activity.class);
+                    New.putExtra("Name", name1);
+                    New.putExtra("GradeText", Grade);
+                    startActivity(New);
                 }
-                if(score.equals("")){
-                    score.setError("ป้อนคะแนน");
-                }*/
-
-                String Grade = " ";
-                if (score1 == 80 || score1 > 80){
-                    Grade = "A";
-                }else if(score1 == 70 && score1 < 80){
-                    Grade = "B";
-                }else if (score1 == 60 && score1 <70){
-                    Grade = "C";
-                }else if(score1 == 50 && score1< 60){
-                    Grade = "D";
-                }else if(score1 <50){
-                    Grade = "F";
-                }
-                Intent New = new Intent(MainActivity.this,Main2Activity.class);
-                New.putExtra("Name",name1);
-                New.putExtra("GradeText",Grade);
-                startActivity(New);
             }
         });
 
-        exit.setOnClickListener(new View.OnClickListener() {
+       exit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 AlertDialog.Builder dialog = new AlertDialog.Builder(MainActivity.this);

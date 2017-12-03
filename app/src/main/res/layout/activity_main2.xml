@@ -28,6 +28,6 @@
         android:background="#88EEEEEE"
         android:gravity="center"
         android:textColor="#000000"
-        android:textSize="40dp"
+        android:textSize="300dp"
         android:textStyle="bold" />
 </LinearLayout>
